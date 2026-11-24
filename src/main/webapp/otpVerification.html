@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Iland Bank</title>
+
+    <!-- Tailwind CSS v4 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- CDN link for Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+    />
+
+    <!-- Fonts link from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="logo.svg" type="image/svg+xml" />
+    <!-- Custome Design Tokens -->
+    <style type="text/tailwindcss">
+      @theme {
+        /* Surface - Backgrounds */
+        --color-surface-primary: #1b1a1f;
+        --color-surface-secondary: #29292a;
+
+        /* Accent - Highlight and Branding */
+        --color-accent-primary: #fa5606;
+        --color-accent-secondary: #8eadb1;
+
+        /* Content - Typography */
+        --color-content-primary: #e8f8fc;
+        --color-content-secondary: #a7a2a4;
+
+        /* Font - Font name */
+        --font-poppins: "Poppins", sans-serif;
+        --font-bebas: "Bebas Neue", sans-serif;
+        --font-oswald: "Oswald", sans-serif;
+        --font-pacifico: "Pacifico", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-surface-primary text-content-primary">
+    <div
+      class="relative w-[30rem] rounded-xl mx-auto bg-gradient-to-tl from-accent-primary/35 via-surface-primary/10 via-20% to-content-secondary/50 to-150% p-px mt-18 overflow-hidden"
+    >
+      <!-- Border Form card -->
+      <div class="absolute z-0 inset-0">
+        <div
+          class="bg-content-primary w-10 h-10 blur-xl absolute top-0 left-0"
+        ></div>
+        <div
+          class="bg-accent-primary w-5 h-10 blur-xl absolute bottom-20 left-0"
+        ></div>
+        <div
+          class="bg-content-primary w-30 h-2 blur-lg absolute bottom-0 left-[10%]"
+        ></div>
+        <div
+          class="bg-content-primary w-30 h-2 blur-lg absolute top-0 left-[25%]"
+        ></div>
+        <div
+          class="bg-content-primary w-2 h-50 blur-lg absolute top-[40%] right-0"
+        ></div>
+        <div
+          class="bg-accent-primary w-50 h-5 blur-xl absolute bottom-0 right-0"
+        ></div>
+      </div>
+
+      <!-- Card -->
+      <div
+        class="relative z-20 w-full bg-surface-primary/85 rounded-xl flex flex-col items-center py-10"
+      >
+        <!-- Shield -->
+        <div
+          class="grid place-content-center w-18 aspect-square rounded-full bg-linear-to-tl from-surface-secondary/30 from-65% to-accent-primary to-100% p-px border border-content-secondary/10 shadow-[0_2px_5px_var(--color-accent-primary)]"
+        >
+          <div
+            class="w-full aspect-square rounded-full grid place-content-center text-4xl text-accent-primary bg-surface-secondary/50"
+          >
+            <i class="fa-solid fa-shield"></i>
+          </div>
+        </div>
+
+        <!-- Heading -->
+        <div class="text-center">
+          <h2 class="text-3xl font-bold py-3">
+            OTP <span class="text-accent-primary">Verification</span>
+          </h2>
+          <p class="text-content-secondary">
+            We've sent a 6-digit code to <br />
+          </p>
+          <p>
+            <i class="fa-solid fa-envelope"></i>
+            <span>iland12maimom@gmail.com</span>
+          </p>
+        </div>
+
+        <!-- Input Box -->
+        <form class="space-y-5 mt-8">
+          <div id="otp-Container" class="flex gap-2"></div>
+          <div
+            class="h-8 flex justify-center items-center bg-accent-primary rounded-lg cursor-pointer"
+          >
+            <a
+              href="#"
+              type="submit"
+              class="flex items-center gap-2 text-xl text-surface-primary font-bold"
+            >
+              Verify <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const otpContainer = document.getElementById("otp-Container");
+
+      otpContainer.innerHTML = Array(6)
+        .fill("_")
+        .map(
+          () =>
+            `
+		 <input
+            type="text"
+            maxlength="1"
+            inputmode="numeric"
+            pattern="[0-9]"
+            class="input w-12 aspect-square text-center text-3xl border-2 border-content-secondary/50 focus:border-accent-primary focus:shadow-[0_0_5px_var(--color-accent-primary)] rounded-lg outline-none"
+          />
+`,
+        )
+        .join("");
+
+      // OTP Input Handle
+      const inputs = document.querySelectorAll(".input");
+
+      inputs.forEach((inputOtp, index) => {
+        inputOtp.addEventListener("input", (e) => {
+          // 1. Numbers only
+          e.target.value = e.target.value.replace(/\D/g, "");
+          // \D = Non-Digit,  g = global
+
+          // 2. Focus on first input
+          // inputs[1].focus();
+
+          // 3. Move to next input
+          if (e.target.value && index < inputs.length - 1) {
+            inputs[index + 1].focus();
+          }
+        });
+
+        // Handle keyboard navigation
+        inputOtp.addEventListener("keydown", (e) => {
+          // 1. Backspace
+          if (e.key === "Backspace" && !inputOtp.value && index > 0) {
+            inputs[index - 1].value = "";
+            inputs[index - 1].focus();
+          }
+
+          //  2. Arrow left
+          if (e.key === "ArrowLeft" && index > 0) {
+            inputs[index - 1].focus();
+          }
+
+          //  3. Arrow right
+          if (e.key === "ArrowRight" && index < inputs.length - 1) {
+            inputs[index + 1].focus();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

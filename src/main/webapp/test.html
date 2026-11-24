@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iland Bank - Sign Up</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+
+  <body class="min-h-screen bg-[#090909] flex items-center justify-center p-5">
+    <!-- Signup Card Outer Border -->
+    <div
+      class="relative w-full max-w-[640px] rounded-[32px] p-[1.5px] bg-gradient-to-br from-white/50 via-white/10 to-orange-500/70 shadow-[0_0_35px_red]"
+    >
+      <!-- Glass Card -->
+      <div
+        class="relative overflow-hidden rounded-[31px] bg-black/50 backdrop-blur-2xl border border-white p-8 sm:p-10"
+      >
+        <!-- Orange Glow -->
+        <div
+          class="pointer-events-none absolute -bottom-24 -right-24 size-72 rounded-full bg-orange-500/10 blur-[100px]"
+        ></div>
+
+        <!-- Heading -->
+        <div class="relative z-10 mb-7">
+          <div class="w-16 h-1.5 rounded-full bg-orange-500 mb-4"></div>
+
+          <h1 class="text-3xl sm:text-4xl font-bold text-white">
+            Create Your Account
+          </h1>
+
+          <p class="text-white/60 mt-2 text-base sm:text-lg">
+            It's quick and easy. Get started with Iland Bank.
+          </p>
+        </div>
+
+        <!-- Signup Form -->
+        <form class="relative z-10 space-y-4">
+          <!-- Full Name -->
+          <div class="relative">
+            <i
+              data-lucide="user-round"
+              class="absolute left-5 top-1/2 -translate-y-1/2 text-white size-5"
+            ></i>
+
+            <input
+              type="text"
+              placeholder="Full Name"
+              class="w-full h-14 pl-16 pr-5 rounded-xl bg-white/[0.04] border border-white/20 text-white placeholder:text-white/50 outline-none focus:border-orange-500 transition"
+            />
+          </div>
+
+          <!-- Email -->
+          <div class="relative">
+            <i
+              data-lucide="mail"
+              class="absolute left-5 top-1/2 -translate-y-1/2 text-white size-5"
+            ></i>
+
+            <input
+              type="email"
+              placeholder="Email Address"
+              class="w-full h-14 pl-16 pr-5 rounded-xl bg-white/[0.04] border border-white/20 text-white placeholder:text-white/50 outline-none focus:border-orange-500 transition"
+            />
+          </div>
+
+          <!-- Phone -->
+          <div class="relative">
+            <i
+              data-lucide="phone"
+              class="absolute left-5 top-1/2 -translate-y-1/2 text-white size-5"
+            ></i>
+
+            <input
+              type="tel"
+              placeholder="Phone Number"
+              class="w-full h-14 pl-16 pr-5 rounded-xl bg-white/[0.04] border border-white/20 text-white placeholder:text-white/50 outline-none focus:border-orange-500 transition"
+            />
+          </div>
+
+          <!-- Password -->
+          <div class="relative">
+            <i
+              data-lucide="lock-keyhole"
+              class="absolute left-5 top-1/2 -translate-y-1/2 text-white size-5"
+            ></i>
+
+            <input
+              type="password"
+              placeholder="Password"
+              class="w-full h-14 pl-16 pr-14 rounded-xl bg-white/[0.04] border border-white/20 text-white placeholder:text-white/50 outline-none focus:border-orange-500 transition"
+            />
+
+            <i
+              data-lucide="eye"
+              class="absolute right-5 top-1/2 -translate-y-1/2 text-white size-5"
+            ></i>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="relative">
+            <i
+              data-lucide="lock-keyhole"
+              class="absolute left-5 top-1/2 -translate-y-1/2 text-white size-5"
+            ></i>
+
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              class="w-full h-14 pl-16 pr-14 rounded-xl bg-white/[0.04] border border-white/20 text-white placeholder:text-white/50 outline-none focus:border-orange-500 transition"
+            />
+
+            <i
+              data-lucide="eye"
+              class="absolute right-5 top-1/2 -translate-y-1/2 text-white size-5"
+            ></i>
+          </div>
+
+          <!-- Terms -->
+          <label
+            class="flex items-center gap-3 text-white/90 text-sm sm:text-base cursor-pointer py-1"
+          >
+            <input type="checkbox" class="accent-orange-500 size-4 shrink-0" />
+
+            <span>
+              I agree to the
+              <a href="#" class="text-orange-500 hover:underline"
+                >Terms and Conditions</a
+              >
+              and
+              <a href="#" class="text-orange-500 hover:underline"
+                >Privacy Policy</a
+              >
+            </span>
+          </label>
+
+          <!-- Create Account -->
+          <button
+            type="submit"
+            class="w-full h-14 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-black font-bold text-lg flex items-center justify-center gap-3 hover:shadow-[0_0_25px_rgba(249,115,22,0.4)] hover:scale-[1.01] active:scale-[0.98] transition-all duration-300"
+          >
+            Create Account
+            <i data-lucide="arrow-right" class="size-5"></i>
+          </button>
+        </form>
+
+        <!-- Divider -->
+        <div class="relative z-10 flex items-center gap-4 my-6">
+          <div class="flex-1 h-px bg-white/20"></div>
+
+          <span class="text-white/70 text-sm">or sign up with</span>
+
+          <div class="flex-1 h-px bg-white/20"></div>
+        </div>
+
+        <!-- Social Buttons -->
+        <div class="relative z-10 grid grid-cols-3 gap-3">
+          <button
+            class="h-14 rounded-2xl bg-white/[0.03] border border-white/10 text-white font-bold hover:bg-white/10 transition"
+          >
+            G
+          </button>
+
+          <button
+            class="h-14 rounded-2xl bg-white/[0.03] border border-white/10 text-white text-2xl hover:bg-white/10 transition"
+          >
+            Apple
+          </button>
+
+          <button
+            class="h-14 rounded-2xl bg-white/[0.03] border border-white/10 text-white font-bold hover:bg-white/10 transition"
+          >
+            Microsoft
+          </button>
+        </div>
+
+        <!-- Sign In -->
+        <div
+          class="relative z-10 flex justify-center items-center gap-2 mt-6 text-sm sm:text-base"
+        >
+          <span class="text-white/70"> Already have an account? </span>
+
+          <a href="#" class="text-orange-500 font-semibold hover:underline">
+            Sign In →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

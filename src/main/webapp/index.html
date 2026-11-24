@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Iland Bank</title>
+
+    <!-- Tailwind CSS v4 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- CDN link for Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+    />
+
+    <!-- Fonts link from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="logo.svg" type="image/svg+xml" />
+    <!-- Custome Design Tokens -->
+    <style type="text/tailwindcss">
+      @theme {
+        /* Surface - Backgrounds */
+        --color-surface-primary: #1b1a1f;
+        --color-surface-secondary: #29292a;
+
+        /* Accent - Highlight and Branding */
+        --color-accent-primary: #fa5606;
+        --color-accent-secondary: #8eadb1;
+
+        /* Content - Typography */
+        --color-content-primary: #e8f8fc;
+        --color-content-secondary: #a7a2a4;
+
+        /* Font - Font name */
+        --font-poppins: "Poppins", sans-serif;
+        --font-bebas: "Bebas Neue", sans-serif;
+        --font-oswald: "Oswald", sans-serif;
+        --font-pacifico: "Pacifico", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="text-content-primary font-poppins bg-surface-primary">
+    <!-- Navbar -->
+    <nav class="sticky top-0 left-0 z-50">
+      <div
+        class="w-full h-18 flex justify-between items-center font-semibold px-20 bg-surface-primary/70 backdrop-blur-lg border-b-2 border-surface-secondary"
+      >
+        <!-- LOGO -->
+        <div class="flex items-center gap-2 font-bold text-2xl">
+          <div class="flex items-center w-15 h-15">
+            <img src="logo.svg" alt="logo" width="100%" height="100%" />
+          </div>
+          <h1>Iland Bank</h1>
+        </div>
+
+        <!-- Navigaton Tabs -->
+        <div class="flex space-x-10">
+          <a href="#home">Home</a>
+          <a href="#home">Personal</a>
+          <a href="#home">Business</a>
+          <a href="#home">Features</a>
+          <a href="#home">About</a>
+          <a href="#home">Support</a>
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <!-- Search Icon -->
+          <div class="h-fit grid place-content-center border-r px-4">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+
+          <!-- Action Button -->
+          <div class="flex space-x-4">
+            <a
+              class="flex items-center border border-content-primary text-sm px-4 py-1 rounded-full"
+              href="#signin"
+              >Sign In</a
+            >
+            <a
+              class="flex items-center gap-1 bg-accent-primary text-surface-primary text-xs font-bold border border-accent-primary px-4 py-1 rounded-full"
+              href="#signup"
+              >Open Account <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+
+    <header>
+      <div class="bg-surface-primary scroll-m-t-18">
+        <div class="flex">
+          <div class="pl-25">
+            <div class="pt-15 space-y-5">
+              <div
+                class="w-fit p-px bg-gradient-to-r from-content-secondary to-surface-secondary to-7% rounded-full"
+              >
+                <p
+                  class="w-full h-full bg-surface-secondary flex items-center gap-1 px-3 py-1 text-xs rounded-full"
+                >
+                  <i
+                    class="fa-solid fa-circle text-[8px] text-accent-primary"
+                  ></i>
+                  Your Trusted Financial Partner
+                </p>
+              </div>
+
+              <h2 class="font-bold text-5xl whitespace-nowrap">
+                Smarter Banking <br />
+                A Better
+                <span class="text-accent-primary">Tomorrow</span>
+              </h2>
+              <p class="text-lg text-content-secondary">
+                Experience seamless, secure and intelligent banking with <br />
+                Iland Bank- anytime, anywhere.
+              </p>
+            </div>
+
+            <div class="mt-8">
+              <a
+                class="w-fit flex items-center gap-2 bg-accent-primary text-surface-primary font-bold border border-accent-primary px-4 py-2 rounded-full"
+                href="#signup"
+                >Open an Account <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <img
+              class="w-full h-110 mask-l-to-transparent-25% mask-l-from-80% mask-b-to-transparent-20% mask-b-from-80% mask-r-to-transparent-25% mask-r-from-80%"
+              src="hero.svg"
+              alt="hero"
+            />
+          </div>
+        </div>
+
+        <section class="px-20 -mt-10">
+          <div
+            class="flex justify-between bg-accent-secondary/20 backdrop-blur-sm saturate-100 rounded-2xl border-1 border-content-secondary/25 py-4"
+          >
+            <div
+              class="h-fit flex items-center gap-3 px-12 border-r border-content-secondary"
+            >
+              <i class="fa-solid fa-shield text-3xl text-accent-primary"></i>
+              <div>
+                <h2 class="font-semibold">Bank-Grade Security</h2>
+                <p class="text-content-secondary text-sm">
+                  Your data, always protected
+                </p>
+              </div>
+            </div>
+            <div
+              class="h-fit flex items-center gap-3 px-12 border-r border-content-secondary"
+            >
+              <i class="fa-solid fa-bolt text-3xl text-accent-primary"></i>
+              <div>
+                <h2 class="font-semibold">Instant Transactions</h2>
+                <p class="text-content-secondary text-sm">
+                  Fast. Reliable. 24/7
+                </p>
+              </div>
+            </div>
+            <div
+              class="h-fit flex items-center gap-3 px-12 border-r border-content-secondary"
+            >
+              <i
+                class="fa-solid fa-chart-line text-3xl text-accent-primary"
+              ></i>
+              <div>
+                <h2 class="font-semibold">Smart Financial Tools</h2>
+                <p class="text-content-secondary text-sm">Plan. Save. Grow.</p>
+              </div>
+            </div>
+            <div class="h-fit flex items-center gap-3 px-12">
+              <i class="fa-solid fa-headset text-3xl text-accent-primary"></i>
+              <div>
+                <h2 class="font-semibold">Dedicated Support</h2>
+                <p class="text-content-secondary text-sm">We're here for you</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-10">
+          <div class="flex justify-between items-center gap-40 px-25">
+            <div class="space-y-2">
+              <p
+                class="flex items-center font-oswald font-semibold text-accent-primary"
+              >
+                <i class="fa-solid fa-minus text-3xl pt-1"></i> WHY CHOOSE ILAND
+                BANK
+              </p>
+              <p class="text-4xl font-semibold">
+                More Than a Bank- <br />
+                A <span class="text-accent-primary">Financial</span> Partner
+              </p>
+              <p class="text-sm text-content-secondary">
+                From everyday bankinng to long-term goals, we're here to support
+                your jounet=y woith innovative solutions
+              </p>
+              <a
+                href="#"
+                class="w-fit flex items-center gap-2 text-accent-primary border-2 border-accent-primary px-4 py-2 rounded-full"
+                >Explore More<i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+
+            <div class="w-200 flex justify-between">
+              <div
+                class="space-y-2 w-38 h-30 flex flex-col justify-center items-center text-center bg-accent-secondary/20 backdrop-blur-sm saturate-100 rounded-2xl border-1 border-content-secondary/25"
+              >
+                <i class="fa-solid fa-users text-accent-primary text-xl"></i>
+                <div>
+                  <p class="text-3xl font-semibold">10M+</p>
+                  <p class="text-xs font-light">Happy Customers</p>
+                </div>
+              </div>
+              <div
+                class="space-y-2 w-38 h-30 flex flex-col justify-center items-center text-center bg-accent-secondary/20 backdrop-blur-sm saturate-100 rounded-2xl border-1 border-content-secondary/25"
+              >
+                <i
+                  class="fa-solid fa-earth-americas text-accent-primary text-xl"
+                ></i>
+                <div>
+                  <p class="text-3xl font-semibold">25+</p>
+                  <p class="text-xs font-light">Countries</p>
+                </div>
+              </div>
+              <div
+                class="space-y-2 w-38 h-30 flex flex-col justify-center items-center text-center bg-accent-secondary/20 backdrop-blur-sm saturate-100 rounded-2xl border-1 border-content-secondary/25"
+              >
+                <i class="fa-solid fa-star text-accent-primary text-xl"></i>
+                <div>
+                  <p class="text-3xl font-semibold">4.9/5</p>
+                  <p class="text-xs font-light">Customer Rating</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <!-- Footer -->
+    <footer
+      class="mt-7 bg-linear-to-r from-surface-secondary via-accent-primary/30 via-50% to-surface-secondary to-100% pt-[2px]"
+    >
+      <div class="bg-surface-primary">
+        <div class="h-50 flex items-center">
+          <div class="w-full flex justify-between items-start px-20">
+            <!-- Bank's Logo -->
+            <div class="space-y-8">
+              <div class="whitespace-nowrap">
+                <div class="flex items-center gap-2 font-bold text-3xl">
+                  <div class="flex items-center w-20 h-20">
+                    <img src="logo.svg" alt="logo" width="100%" height="100%" />
+                  </div>
+                  <h1>Iland Bank</h1>
+                </div>
+                <p class="text-sm text-content-secondary">
+                  Smarter Banking A better Tomorrow
+                </p>
+              </div>
+              <div class="flex justify-between">
+                <i class="fa-brands fa-facebook text-2xl"></i>
+                <i class="fa-brands fa-x-twitter text-2xl"></i>
+                <i class="fa-brands fa-instagram text-2xl"></i>
+                <i class="fa-brands fa-youtube text-2xl"></i>
+                <i class="fa-brands fa-linkedin text-2xl"></i>
+              </div>
+            </div>
+
+            <!-- Quick Links -->
+            <nav class="space-y-2">
+              <h3 class="font-semibold">Quick Links</h3>
+              <ul class="font-light text-sm space-y-1">
+                <li><a href="/">Home</a></li>
+                <li><a href="/personal">Personal</a></li>
+                <li><a href="/business">Business</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/support">Support</a></li>
+              </ul>
+            </nav>
+
+            <!-- Services -->
+            <nav class="space-y-2">
+              <h3 class="font-semibold">Services</h3>
+              <ul class="font-light text-sm space-y-1">
+                <li><a href="/savings">Savings Account</a></li>
+                <li><a href="/credit">Credit Cards</a></li>
+                <li><a href="/loans">Loans</a></li>
+                <li><a href="/investment">Investment</a></li>
+                <li><a href="/mobile-banking">Mobile Banking</a></li>
+              </ul>
+            </nav>
+
+            <!-- Contact Us -->
+            <address class="not-italic space-y-2">
+              <h3 class="font-semibold">Contact Us</h3>
+              <ul class="font-light text-sm space-y-2">
+                <li>
+                  <a href="/location" class="flex items-center gap-2">
+                    <i class="fa-solid fa-location-dot text-base"></i>
+                    <span
+                      >Thoubal Haokha <br />
+                      Manipur, India
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="tel:+919863355815" class="flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-base"></i
+                    ><span>+91 9863355815</span></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="mailto:iland12maimom@gmail.com"
+                    class="flex items-center gap-2"
+                  >
+                    <i class="fa-solid fa-envelope text-base"></i>
+                    <span>iland12maimom@gmail.com</span></a
+                  >
+                </li>
+              </ul>
+            </address>
+
+            <!-- Subscribe Newsletter -->
+            <div class="space-y-2">
+              <h3 class="font-semibold">Subscribe to our Newsletter</h3>
+              <div class="space-y-2 font-light text-sm">
+                <p>Get the latest updates and offers.</p>
+                <form
+                  action="#"
+                  method="post"
+                  class="flex items-center border border-content-secondary rounded-lg overflow-hidden"
+                >
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Your email address"
+                    autocomplete="email"
+                    required
+                    class="w-full h-8 outline-none text-xs px-2"
+                  />
+                  <button
+                    type="submit"
+                    class="w-10 h-8 grid place-content-center bg-accent-primary cursor-pointer hover:bg-accent-primary/80"
+                  >
+                    <i class="fa-solid fa-paper-plane text-surface-primary"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="mx-20 border-[1.5px] border-content-primary/20" />
+
+        <!-- Ṛights -->
+        <div
+          class="flex justify-between px-20 pt-3 pb-7 bg-surface-primary text-sm font-light"
+        >
+          <div>
+            <h3>
+              &copy; 2026 <span class="font-semibold">Iland Bank</span>. All
+              rights reserved.
+            </h3>
+          </div>
+          <div>
+            <ul class="flex items-center">
+              <li class="border-r border-content-primary/50 px-4">
+                Privacy Policy
+              </li>
+              <li class="border-r border-content-primary/50 px-4">
+                Terms of Service
+              </li>
+              <li class="pl-4">Cookie Settings</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
